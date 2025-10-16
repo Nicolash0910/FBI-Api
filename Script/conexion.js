@@ -1,23 +1,18 @@
-async function conexionLista(filtro) {
-  let url = "https://api.fbi.gov/wanted/v1/list";
+// === conexion.js ===
 
-  // Filtro básico por sexo, si no es "All"
-  if (filtro && filtro !== "All") {
-    url += `?sex=${filtro}`;
-  }
-
-  const res = await fetch(url);
+async function conexionLista() {
+  const res = await fetch("https://api.fbi.gov/wanted/v1/list");
   const data = await res.json();
-  return data.items; // devuelve la lista de personas
+  return data.items; // la API devuelve los resultados en .items
 }
 
 let personas = [];
 
 async function General() {
   if (personas.length === 0) {
-    personas = await conexionLista("All");
+    personas = await conexionLista();
   }
   home();
 }
 
-General(); 
+General();
