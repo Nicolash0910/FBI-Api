@@ -1,5 +1,3 @@
-// === detalle.js ===
-
 async function Detalle(id) {
   const res = await fetch(`https://api.fbi.gov/wanted/v1/item/${id}`);
   const data = await res.json();

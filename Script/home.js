@@ -1,5 +1,3 @@
-// === home.js ===
-
 function FiltroConexion(filtro) {
   let filtrados = [];
 
@@ -86,7 +84,7 @@ function home() {
   buscador.placeholder = "Buscar persona buscada...";
   buscador.addEventListener("input", () => buscadorfuncion(buscador.value));
 
-  // ✅ Filtros sin "Unknown"
+  
   const filtros = ["All", "Male", "Female"];
   const contenedorFiltros = document.createElement("div");
   contenedorFiltros.classList.add("filtros-container");
